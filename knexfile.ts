@@ -9,5 +9,9 @@ export default {
     migrations: {
         extension: 'ts',
         directory: './src/database/migrations'
+    },
+    seeds: {
+        extension: 'ts',
+        directory: './src/database/seeds'
     }
 }
