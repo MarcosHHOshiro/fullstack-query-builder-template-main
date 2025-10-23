@@ -49,7 +49,7 @@ app.get("/modules", async (request: Request, response: Response) => {
 })
 
 app.get("/courses/:id/modules", async (request: Request, response: Response) => {
-  const courses = await knex("course").select("*")
+  const courses = await knex("course").select().join("course_modules", "course.id", "course_modules.course_id").where("course.id", request.params.id)
   response.status(201).json(courses)
 
 })
